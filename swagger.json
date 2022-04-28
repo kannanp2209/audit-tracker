@@ -1,0 +1,147 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Gembawalker",
+		"description": "Gembawalker",
+		"license": {
+			"name": "MIT",
+			"url": "https://opensource.org/licenses/MIT"
+		}
+	},
+	"host": "wdeswst01:1536/",
+	"basePath": "gembawalker-dev/",
+	"schemes": [
+		"http"
+	],
+	"consumes": [
+		"application/json"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/test": {
+			"get": {
+				"tags": [
+					"API's"
+				],
+				"summary": "Test Api",
+				"responses": {
+					
+				}
+			}
+		},
+		"/NewTestMail": {
+			"get": {
+				"tags": [
+					"API's"
+				],
+				"summary": "NewTestMail Api",
+				"parameters": [
+					{
+						"in": "path",
+						"name": "tomail",
+						"description": "User Email",
+						"required": true,
+						"type": "string"
+					}
+					
+				],
+				"responses": {
+					
+				}
+			}
+		},
+		"/GetUserDetails": {
+			"post": {
+				"tags": [
+					"API's"
+				],
+				"summary": "GetUserDetails",
+				"parameters": [
+					{
+						"in": "body",
+						"name": "DomainName",
+						"description": "DomainName",
+						"required": true,
+						"type": "string"
+					}
+					
+				],
+				"responses": {
+					
+				}
+			}
+		},
+		"/UserCreate": {
+			"post": {
+				"tags": [
+					"API's"
+				],
+				"summary": "UserCreate",
+				"consumes": [
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "formData",
+						"name": "DomainName",
+						"description": "DomainName",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "formData",
+						"name": "FirstName",
+						"description": "FirstName",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "formData",
+						"name": "LastName",
+						"description": "LastName",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "formData",
+						"name": "Email",
+						"description": "Email",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "formData",
+						"name": "EmpId",
+						"description": "EmpId",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "formData",
+						"name": "LastLogin",
+						"description": "LastLogin",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "formData",
+						"name": "EmpLocation",
+						"description": "EmpLocation",
+						"required": true,
+						"type": "string"
+					}
+					
+				],
+				"responses": {
+					
+				}
+			}
+		}
+	}
+}
