@@ -111,11 +111,7 @@ app.all("/*", function(req, res, next) {
 	app.use(express.static('data/img'));
 
 	app.post("/gembawalker-dev/test", (req, res, next) => {
-
 		res.json(Common.jsonCovert("success", "Test API", 1));
-		/*dbQuery.test().then(result => {
-			res.json(Common.jsonCovert("success", result, 1));
-		});*/
 	});
 
 	app.post("/gembawalker-dev/NewTestMail", (req, res, next) => {
