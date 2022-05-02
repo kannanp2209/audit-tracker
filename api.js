@@ -38,10 +38,8 @@ var dbQuery = new DBQuery();
 app.listen(1565, () => {
     var datetime = new Date();
     console.log("Servcer Running on port 1565");
-    //console.log('Servcer Running on port %d \nTime :'+datetime+'', server.address().port);
 });
 
-//app.use(nocache());
 
 app.all("/*", function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
