@@ -94,8 +94,6 @@ app.all("/*", function(req, res, next) {
 	/* --------- JWT Token Validation -------------------- */
 
 	app.use((req, res, next) => {
-		//res.header("Access-Control-Allow-Origin", "*");
-		//res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 		res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private')
 		next()
 	})
