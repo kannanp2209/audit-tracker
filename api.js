@@ -101,7 +101,6 @@ app.all("/*", function(req, res, next) {
 	app.use('/gembawalker-dev/TutorialImage', express.static(__dirname + "/assets/mobile_tutorial_slides/auditee/"));
 	app.use('/gembawalker-dev/TutorialImage', express.static(__dirname + "/assets/mobile_tutorial_slides/auditor/"));
 
-	//return {"status": "asdasd", "content": "dfdfdfd", "value": "122"};
 
 	console.log("-------------");
 	
