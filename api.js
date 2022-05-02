@@ -24,6 +24,7 @@ var cron = require('node-cron');
 var request = require('request');
 var jwt = require('jsonwebtoken');
 
+
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
@@ -47,11 +48,6 @@ app.all("/*", function(req, res, next) {
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
     res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-
-    //console.log("%%%%%%%%%%"+req.query);
-    //var Token = req.headers['Authorization'];
-    //var TokenDecode = jwt.decode(Token, {complete: true});
-    //console.log(TokenDecode);
     next();
 });
 
