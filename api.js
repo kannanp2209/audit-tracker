@@ -290,7 +290,6 @@ app.all("/*", function(req, res, next) {
 		var LocationId = req.body.LocationId;
 		var CreatedOn = Common.ConvertTime(LocationId);
 		if (typeof LocationId === 'undefined') { LocationId = ''; }
-		//res.json(Common.jsonCovert("ok", "Successfully Inserted-"+req.body.DomainName+DomainName+LastLogin, 1));
 		dbQuery.GetUserDetails(DomainName, LocationId).then(response => {
 			console.log(response.length);
 			if (!response.length) {
