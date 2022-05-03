@@ -196,7 +196,6 @@ app.all("/*", function(req, res, next) {
 				  attributes: ['sn', 'cn', 'mail', 'displayName', 'givenName', 'employeeNumber', 'co', 'passwordExpirationTime', 'zfUserStatus']
 				};
 				const retVal=[];
-				//return new Promise((resolve, reject) => {
 					client.search('OU=accounts,o=ZF', opts, (err, ress) => {
 						 if(err) {
 							 console.log("ERROR in Search"+ err);
@@ -204,23 +203,11 @@ app.all("/*", function(req, res, next) {
 						 } else {
 							 
 							 console.log("@@@@@@@@@@@@@@@@@");
-							 /* ress.on('searchRequest', (searchRequest) => {
-								console.log('searchRequest: ', searchRequest.messageID);
-							  }); */
 							  ress.on('searchEntry', (entry) => {
 								console.log('entry: ' + JSON.stringify(entry.object));
 								retVal.push(entry.object);
 								res.send({status: 'success', message: entry.object});
 							  });
-							  /*ress.on('searchReference', (referral) => {
-								console.log('referral: ' + referral.uris.join());
-							  });
-							  ress.on('error', (err) => {
-								console.error('error: ' + err.message);
-							  });
-							  ress.on('end', (result) => {
-								console.log('status: ' + result.status);
-							  });*/
 							 
 						 }
 					  
