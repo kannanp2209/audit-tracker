@@ -449,18 +449,6 @@ app.all("/*", function(req, res, next) {
 		});
 	});
 
-	/*app.post("/randomaudit/GetMistakeCodeByCategory", (req, res, next) => {
-		var CategoryId = req.body.CategoryId;
-		console.log("#########"+req.body.CategoryId);
-		if(!CategoryId) {
-			res.json(Common.jsonCovert("error", "Data missing", 0));
-		}
-		dbQuery.GetMistakeCodeByCategory(dbTable.AuditMC, CategoryId).then(response => {
-			res.json(Common.jsonCovert("success", response, 1));
-		
-		});
-	}); */
-
 	app.post("/gembawalker-dev/GetMistakeCodeByCategory", (req, res, next) => {
 		var CategoryId = req.body.CategoryId;
 		var RAId = req.body.RAId;
