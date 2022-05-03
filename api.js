@@ -588,7 +588,6 @@ app.all("/*", function(req, res, next) {
 		var insertValues = { RAId: RAId, CategoryId: CategoryId, CEId: CEId, MCId: MCId, NCLevel: NCLevel, NCDescription: NCDescription, CreatedOn: CreatedOn, AuditerResponsibleId: AuditerResponsibleId, LocationId: LocationId, ProxyUser: ProxyUser };
 		dbQuery.NCCreateContent(dbTable.RANCList, columnKey, insertValues).then(response => {
 			if (response[0]['insertedId']) {
-				//Common.CreateNCMail(response[0]['insertedId']);
 				res.json(Common.jsonCovert("success", "Successfully Inserted", response[0]['insertedId']));
 			} else {
 				res.json(Common.jsonCovert("error", "Oops! Try again later", 0));
