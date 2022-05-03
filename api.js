@@ -605,7 +605,6 @@ app.post("/gembawalker-dev/NCUpdateContent", (req, res, next) => {
     var NCStatus = req.body.NCStatus;
     var NCDescription = req.body.NCDescription;
     var AuditerResponsibleId = req.body.AuditerResponsibleId;
-    //var UpdatedOn = dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
     var LocationId = req.body.LocationId;
 	var UpdatedOn = Common.ConvertTime(LocationId);
     if (typeof LocationId === 'undefined') { LocationId = ''; }
