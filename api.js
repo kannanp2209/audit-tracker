@@ -594,7 +594,6 @@ app.all("/*", function(req, res, next) {
 			}
 		});
 	});
-
 app.post("/gembawalker-dev/NCUpdateContent", (req, res, next) => {
     var NCId = req.body.NCId;
     var RAId = req.body.RAId;
@@ -655,7 +654,6 @@ app.post("/gembawalker-dev/NCImageUpdate", (req, res, next) => {
         require("fs").writeFile(Ipath, base64Data, 'base64', function(err) {
             console.log(err);
         });
-        //Common.ThumbnailCreate(fileName);
     }
 
     var updateValues = { NCId: NCId, RAId: RAId, NCImage: fileName, UpdatedOn: UpdatedOn, LocationId: LocationId };
