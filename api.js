@@ -286,7 +286,6 @@ app.all("/*", function(req, res, next) {
 		var Status = 1;
 		var SuperAdmin = 0;
 		var Auditor = 0;
-		//var CreatedOn = dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
 		var token = jwt.sign({ DomainName: DomainName }, config.secret);
 		var LocationId = req.body.LocationId;
 		var CreatedOn = Common.ConvertTime(LocationId);
