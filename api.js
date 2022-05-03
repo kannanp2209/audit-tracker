@@ -160,60 +160,7 @@ app.all("/*", function(req, res, next) {
 		)
 	}
 
-    /*
-	app.post("/gembawalker-dev/UserCreate", (req, res, next) => {
-		console.log("1"+req.body);
-		var DomainName = req.body.DomainName;
-		var FirstName = req.body.FirstName;
-		var LastName = req.body.LastName;
-		var Email = req.body.Email;
-		var EmpId = req.body.EmpId;
-		var LastLogin = req.body.LastLogin;
-		var EmpLocation = req.body.EmpLocation;
-		var Status = 1;
-		var SuperAdmin = 0;
-		var Auditor = 0;
-		//var UserOTP = Common.Base64Encode(between(100000, 999999));
-		var UserOTP = between(100000, 999999);
-		//var CreatedOn = dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
-		var token = jwt.sign({ UsersEmpId: EmpId, DomainName: DomainName }, config.secret, { expiresIn: '10d' });
-		if (typeof EmpLocation === 'undefined') {
-			EmpLocation = 'Poland';
-		}
-		console.log('---------testing-------' + req.body.DomainName + DomainName + LastLogin);
-		//res.json(Common.jsonCovert("ok", "Successfully Inserted-"+req.body.DomainName+DomainName+LastLogin, 1));
-		dbQuery.GetUserLocation(dbTable.Locations, EmpLocation).then(locationResponse => {
-
-			if (locationResponse.length) {
-				let LocationId = locationResponse[0].LocationId;
-				dbQuery.GetUserDetails(DomainName, LocationId).then(response => {
-					console.log(response.length);
-					LastLogin = Common.ConvertTime(LocationId, LastLogin);
-					if (!response.length) {
-						var CreatedOn = Common.ConvertTime(LocationId);
-						var columnKey = "DomainName, FirstName, LastName, Email, EmpId, LastLogin, Status, CreatedOn, SuperAdmin, Auditor, LocationId, Token, UserOTP";
-						var insertValues = { DomainName: DomainName, FirstName: FirstName, LastName: LastName, Email: Email, EmpId: EmpId, LastLogin: LastLogin, Status: Status, CreatedOn: CreatedOn, SuperAdmin: SuperAdmin, Auditor: Auditor, LocationId: LocationId, Token: token, UserOTP: UserOTP };
-						dbQuery.CreateUser(dbTable.Users, columnKey, insertValues).then(result => {
-							dbQuery.GetUserDetails(DomainName, LocationId).then(responseUser => {
-								Common.LoginOTPMail(Email, UserOTP);
-								res.json(Common.jsonCovertToken("sucess", "Successfully Inserted", responseUser[0], token));
-							});
-						});
-					} else {
-						console.log("#################################");
-						dbQuery.UpdateUser(dbTable.Users, DomainName, LastLogin, Email, LocationId, token, UserOTP).then(result => {
-							dbQuery.GetUserDetails(DomainName, LocationId).then(responseUser => {
-								Common.LoginOTPMail(Email, UserOTP);
-								res.json(Common.jsonCovertToken("sucess", "Updated Successfully", responseUser[0], token));
-							});
-						});
-					}
-				});
-			} else {
-				res.json(Common.jsonCovert("error", "Location Not Found", 0));
-			}
-		});
-	}); */
+    
 
     app.get('/gembawalker-dev/login', function(req, res){
 		
