@@ -741,7 +741,6 @@ app.post("/gembawalker-dev/NCImageUpdate", (req, res, next) => {
 						fs.unlink("assets/upload_images/"+NCImage, (err) => {
 							res.json(Common.jsonCovert("success", "Successfully Updated", ImgUpdRes));
 						});
-						//fs.unlink("assets/upload_images/"+NCImage);
 					}
 					res.json(Common.jsonCovert("success", "Successfully Updated", ImgUpdRes));
 				});
@@ -753,8 +752,6 @@ app.get("/gembawalker-dev/GetImage", (req, res) => {
     var Uploadimage = req.query.image;
     console.log(Uploadimage);
     res.sendFile(path.join(__dirname, "/assets/upload_images/" + Uploadimage));
-    //res.set({'Content-Type': 'image/png'});
-    //res.sendFile(__dirname+"/assets/upload_images/"+Uploadimage);
 });
 
 app.post("/gembawalker-dev/GetNCList", (req, res, next) => {
