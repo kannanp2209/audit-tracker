@@ -838,7 +838,7 @@ app.post("/gembawalker-dev/NCReassign", (req, res, next) => {
     if (typeof ReassignProxy === 'undefined' || ReassignProxy == '') { ReassignProxy = ''; }
 
     if (!NCId || !RAId || !CAId || !NCReassCommands) {
-        res.json(Common.jsonCovert("error", "Data missing", 0));
+        res.json(Common.jsonCovert("error", "Data missing......", 0));
     }
 
     var updateValues = { NCId: NCId, RAId: RAId, CAId: CAId, CAStatus: CAStatus, UpdatedOn: UpdatedOn, NCReassCommands: NCReassCommands, NCReassOn: NCReassOn, ReassignProxy: ReassignProxy };
