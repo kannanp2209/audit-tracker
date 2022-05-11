@@ -734,7 +734,6 @@ app.post("/gembawalker-dev/NCImageUpdate", (req, res, next) => {
 			});
 			console.log(FilteredImages);
 			FilteredImages = JSON.stringify(FilteredImages);
-			//fs.unlinkSync("assets/upload_images/"+NCImage);
 			dbQuery.UpdateNCImage(dbTable.RANCList, RAId, NCId, FilteredImages).then(ImgUpdRes => {
 				fs.exists("assets/upload_images/"+NCImage, function(exists) {
 					if(exists) {
