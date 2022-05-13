@@ -828,9 +828,7 @@ app.post("/gembawalker-dev/NCReassign", (req, res, next) => {
     var NCReassCommands = req.body.NCReassCommands;
 	var LocationId = req.body.LocationId;
 	var ReassignProxy = req.body.ReassignProxy;
-   // var UpdatedOn = dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
 	var UpdatedOn = Common.ConvertTime(LocationId);
-    //var NCReassOn = dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss");
 	var NCReassOn = Common.ConvertTime(LocationId);
     var CAStatus = 2;
     
