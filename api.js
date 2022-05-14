@@ -833,7 +833,6 @@ app.post("/gembawalker-dev/NCReassign", (req, res, next) => {
     var CAStatus = 2;
     
     if (typeof LocationId === 'undefined') { LocationId = ''; }
-    if (typeof ReassignProxy === 'undefined' || ReassignProxy == '') { ReassignProxy = ''; }
 
     if (!NCId || !RAId || !CAId || !NCReassCommands) {
         res.json(Common.jsonCovert("error", "Data missing......", 0));
