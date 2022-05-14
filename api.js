@@ -832,11 +832,6 @@ app.post("/gembawalker-dev/NCReassign", (req, res, next) => {
 	var NCReassOn = Common.ConvertTime(LocationId);
     var CAStatus = 2;
     
-
-    if (!NCId || !RAId || !CAId || !NCReassCommands) {
-        res.json(Common.jsonCovert("error", "Data missing......", 0));
-    }
-
     var updateValues = { NCId: NCId, RAId: RAId, CAId: CAId, CAStatus: CAStatus, UpdatedOn: UpdatedOn, NCReassCommands: NCReassCommands, NCReassOn: NCReassOn, ReassignProxy: ReassignProxy };
     dbQuery.NCReassign(dbTable.RACA, updateValues).then(response => {
         dbQuery.SingleNCStatusUpdate(dbTable.RANCList, NCId, 3, LocationId).then(responseNC => {
